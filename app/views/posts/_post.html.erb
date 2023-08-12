@@ -1,0 +1,16 @@
+<div
+  id="<%= dom_id post %>"
+  data-controller="post-replace"
+  data-post-replace-post-id-value="<%= post.id %>"
+  >
+  <section data-post-replace-target="post">
+    <p>
+      <strong>Content:</strong>
+      <%= post.content %>
+    </p>
+    <p>
+      <strong>Extra Data:</strong>
+      <%= post.extra_data %>
+    </p>
+  </section>
+</div>

@@ -70,3 +70,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "annotate", "~> 3.2"
+
+gem "sidekiq"
+gem "sidekiq-failures", "~> 1.0"
