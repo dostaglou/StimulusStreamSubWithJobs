@@ -6,17 +6,18 @@ export default class extends Controller {
   static values = { postId: Number }
   static targets = ["post"]
 
+  // When connected, this will open a connection with the PostChannel using the id from the values
+  // The received method indicates what happens with the data received.
+  // In this example it is a one line replacement but can be a more complicated method
   connect() {
-    console.log("connecting")
     this.channel = createConsumer().subscriptions.create(
       { channel: "PostChannel", id: this.postIdValue },
       { received: data => this.postTarget.outerHTML = data }
     )
-    console.log("done")
   }
 
+  // Best practice is to have an unsubscribe
   disconnect() {
-    console.log("Unsubscribed from the chatroom")
     this.channel.unsubscribe()
   }
 }
